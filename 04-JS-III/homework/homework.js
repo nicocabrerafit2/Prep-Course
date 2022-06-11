@@ -1,20 +1,26 @@
 // No cambies los nombres de las funciones.
 
+const { stringify } = require("git-url-parse")
+
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+  return array[0]
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  return array[array.length - 1]
+
 }
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+  return array.length
 }
 
 
@@ -23,6 +29,15 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+ 
+  for (var i= 0; i < array.length; i++){
+  console.log ('02', array)
+  array[i] = array[i]+1
+  console.log ('03', array)
+  }
+  return array
+  
+
 }
 
 
@@ -30,6 +45,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+  array.push(elemento)
+  return array
 }
 
 
@@ -38,6 +55,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  array.unshift (elemento)
+  return array
 }
 
 
@@ -47,6 +66,20 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  var result = ''
+  
+  for (i=0; i<palabras.length;i++){
+    console.log ('o2', result)
+    if (palabras[i] === palabras[palabras.length-1])
+    result=result + palabras[i]
+    else
+    result=result + palabras[i] + ' '
+    console.log ('o3', result)
+  }
+  console.log ('o4', result)
+  return result
+
+
 }
 
 
