@@ -87,6 +87,13 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] === elemento) return true
+  }
+    
+    return false
+  
 }
 
 
@@ -94,6 +101,15 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  var nico = 0
+  for (let i = 0; i < numeros.length; i++) {
+    console.log('01',nico)
+    nico = nico + numeros[i]
+    console.log('02',nico)
+  }
+  console.log('03',nico)
+  return nico
+  
 }
 
 
@@ -101,6 +117,12 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  suma = 0
+  for (let i = 0; i < resultadosTest.length; i++) {
+    suma = suma + resultadosTest[i]
+  }
+    return suma/ resultadosTest.length
+  
 }
 
 
@@ -108,6 +130,9 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  mac=0
+  mac= Math.max (...numeros)
+  return mac
 }
 
 
@@ -115,13 +140,25 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  var multiplica = 1
+  if (arguments.length === 0) return 0
+  if (arguments.length === 1) return arguments[0]
+  for (let i = 0; i < arguments.length; i++) {
+  multiplica = multiplica*arguments[i]
+  }
+  return multiplica
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
+  var contador = 0
+  for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i] > 18)
+    contador++
+  }
+  return contador
 }
 
 
@@ -130,7 +167,12 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
+
+    if (numeroDeDia === 1 || numeroDeDia === 7)
+    return 'Es fin de semana'
+    else
+    return 'Es dia Laboral'
+    
 } 
 
 
@@ -138,6 +180,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  var nico = n.toString()
+  mico = nico.split(' ')
+  if (nico[0] === '9' )
+  return true
+  else return false
+
   
 }
 
@@ -146,9 +194,12 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
+  for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i]!==arreglo[i+1] ) return false
+    else return true
+  }
   
-} 
-
+}
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
